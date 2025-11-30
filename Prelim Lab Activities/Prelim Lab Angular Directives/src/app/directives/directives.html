@@ -1,0 +1,120 @@
+<table>
+    <tr>
+        <td>
+            @if(isStaticNoteVisible===true){
+                <h2>This is static a note with a value of true!</h2>
+            }@else{
+                <h2>This is a static note with a value of false!</h2>
+            }
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>
+            @if(isNoteVisible===true){
+                <p>I am Justin Cabe</p>
+            }
+        </td>
+        <td>
+            <button (click)="showNote()">
+                Show Note
+            </button>
+        </td>
+        <td>
+            <button (click)="hideNote()">
+                Hide Note
+            </button>
+        </td>
+    </tr>
+</table>
+
+
+<table>
+    <tr>
+        <button (click)="toggleNote()">
+            {{ isParagraphVisible ? 'Hide' : 'Show' }}
+        </button>
+
+    @if (isParagraphVisible){
+        <p>From WD - 301</p>
+    }
+    </tr>
+</table>
+
+
+ <table>
+    <tr>
+        <td>
+            @if(monthNameStatic == 'Jan'){
+                <p>January</p>
+            }@else if(monthNameStatic == 'Feb'){
+                <p>February</p>
+            }@else if(monthNameStatic == 'Mar'){
+                <p>March</p>
+            }
+        </td>
+    </tr>
+ </table>
+
+
+<table>
+    <tr>
+        <td>
+            @if(monthNameDynamic == 'Jan'){
+                <p>January</p>
+            }@else if(monthNameDynamic == 'Feb'){
+                <p>February</p>
+            }@else if(monthNameDynamic == 'Mar'){
+                <p>March</p>
+            }@else{
+                <p>That month is not in the Calendar!</p>
+            }
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="monthNameDynamic">
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>
+            <ul>
+                @for (item of cityList; track $index){
+                    <li>
+                        {{ item }}
+                    </li>
+                }
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <th>Student No </th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(item of studentList; track $index){
+            <tr>
+                <td>{{ $index+1 }}</td>
+                <td>{{ item.stud_name }}</td>
+                <td>{{ item.course }}</td>
+                <td>
+                    @if(item.isActive == true){
+                        <p>Active</p>
+                    }@else{
+                        <p>Inactive</p>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

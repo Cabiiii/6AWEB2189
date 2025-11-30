@@ -1,0 +1,29 @@
+
+
+nav {
+  background: #ffffff;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e5e5e5;
+  font-family: Arial, sans-serif;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  margin-right: 10px;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+nav a:last-child {
+  margin-right: 0;
+}
+
+nav a:hover {
+  color: #007bff;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: #007bff;
+}
