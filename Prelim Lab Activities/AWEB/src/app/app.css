@@ -1,0 +1,26 @@
+nav {
+  background-color: rgb(20, 35, 240);
+  padding: 20px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 17px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #00bcd4;
+  transform: translateY(-2px);
+}
+
+nav a:last-child {
+  margin-right: 0;
+}
