@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  height: 90vh;
+  background: url("https://mir-s3-cdn-cf.behance.net/project_modules/source/721fc213376643.56273147b0735.gif") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  padding: 60px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.cta {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Conferences Section */
+.conferences {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.conferences h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  text-align: left;
+  border: 1px solid #eee;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 15px 15px 5px;
+}
+
+.card p {
+  padding: 0 15px 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.card span {
+  display: block;
+  padding: 0 15px 15px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+}

@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header Styles */
+header {
+  background-image: url('https://images.squarespace-cdn.com/content/v1/5534c00ee4b0c15a102700d6/1434582703543-VSQ7PG32ESOCNZU7OQTX/Canary+Wharf+London+UK+animated+gif+animation+time+lapse');
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  height: 70vh;
+}
+
+.header-container h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.header-container p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.learn-more-btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* About Section Styles */
+.about {
+  background-color: white;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+  font-size: 32px;
+  color: #333;
+}
+
+.about p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.gift-btn {
+  background-color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 13px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.gift-btn:hover {
+  background-color: #fff;
+  color: #333;
+}

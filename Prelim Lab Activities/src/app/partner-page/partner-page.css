@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -------- Hero Section -------- */
+.hero {
+  position: relative;
+  background: url("https://i.imgur.com/FTIo0K0.gif") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  height: 70vh;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.hero button {
+  padding: 12px 28px;
+  font-size: 1rem;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero button:hover {
+  background: #fff;
+  color: #333;
+}
+
+/* -------- Section -------- */
+.section {
+  padding: 60px 8%;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+/* -------- Table -------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th,
+td {
+  padding: 14px 16px;
+  border: 1px solid #e0e0e0;
+  vertical-align: middle;
+}
+
+th {
+  background: #f8f9fa;
+  font-weight: bold;
+  text-align: left;
+}
+
+td img {
+  max-height: 60px;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  th {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td::before {
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    font-weight: bold;
+  }
+  td:nth-child(1)::before { content: "Company"; }
+  td:nth-child(2)::before { content: "Trademark"; }
+  td:nth-child(3)::before { content: "Sponsorship"; }
+  td:nth-child(4)::before { content: "Website"; }
+}
