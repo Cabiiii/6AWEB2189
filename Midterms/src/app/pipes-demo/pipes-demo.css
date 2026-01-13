@@ -1,0 +1,118 @@
+/* Base reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Page styling */
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f2f5f9;
+  color: #2c3e50;
+}
+
+/* Student info header */
+p:first-of-type,
+p:nth-of-type(2) {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+p:nth-of-type(2) {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* General content blocks */
+div {
+  background: #ffffff;
+  padding: 16px 20px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border-left: 5px solid #3f51b5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Headings */
+h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #1a237e;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 6px;
+}
+
+h4,
+h5,
+h6 {
+  margin: 6px 0;
+  font-weight: 500;
+}
+
+/* Paragraphs */
+p {
+  margin: 6px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Date section emphasis */
+div p {
+  color: #34495e;
+}
+
+/* Currency & percent values */
+h3 + p,
+h3 + div p {
+  font-weight: 500;
+  color: #2e7d32;
+}
+
+/* Decimal section */
+div h3 {
+  color: #6a1b9a;
+}
+
+/* Async time section */
+div:nth-of-type(6) {
+  font-style: italic;
+  color: #555;
+}
+
+/* Title Case examples */
+h3 + div p {
+  background: #f7f9fc;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+/* Key-value section */
+span {
+  display: block;
+  background: #ffffff;
+  padding: 16px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border-left: 5px solid #ff9800;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+span > p {
+  font-weight: 600;
+  margin-top: 12px;
+  color: #e65100;
+}
+
+/* Key-value items */
+span div {
+  background: #fff8e1;
+  margin: 6px 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid #ffb300;
+  box-shadow: none;
+}
