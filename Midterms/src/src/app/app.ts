@@ -1,39 +1,20 @@
-import { Products } from './products';
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Employee } from './employee';
-
+import { Myservice } from './myservice';
+import { NewCmp } from './new-cmp/new-cmp';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NewCmp],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('angular_share-data');
-
-public employees: {
-  id: number,
-  firstname: string,
-  lastname: string,
-  email: string,
-}[] = [];
-
-constructor(
-  private _employeeService: Employee,
-  private ProductsService: Products
-) {}
-
-ngOnInit() {
-  this.employees = this._employeeService.getEmployees();
-  this.products = this.ProductsService.getProducts();
-}
-
-public products: {
-    productId: string;
-    productName: string;
-    description: string;
-    price: number;
-  }[] = [];
+  protected readonly title = signal('angular-services-demo');
+  todaydate;
+  componentproperty;
+  constructor(private myservice:Myservice) {
+    this.todaydate = this.myservice.showTodayDate()
+    this.componentproperty = this.myservice.serviceproperty;
+  }
 }
