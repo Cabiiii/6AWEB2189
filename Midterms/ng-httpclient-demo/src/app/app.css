@@ -1,0 +1,95 @@
+/* Global dark background */
+:host {
+  display: block;
+  background-color: #0b0b0f;
+  min-height: 100vh;
+  padding: 1.5rem;
+  color: #f5f5f5;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Section titles */
+h2 {
+  color: #ff2b2b;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 5px rgba(255, 43, 43, 0.8),
+    0 0 15px rgba(255, 43, 43, 0.5);
+}
+
+/* Table base */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #12121a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 0 10px rgba(255, 43, 43, 0.15),
+    0 0 25px rgba(255, 43, 43, 0.1);
+}
+
+/* Header cells */
+th {
+  background: linear-gradient(90deg, #2a0000, #400000);
+  color: #ff6b6b;
+  text-align: left;
+  padding: 12px;
+  text-shadow: 0 0 6px rgba(255, 43, 43, 0.6);
+}
+
+/* Body cells */
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #2a2a35;
+}
+
+/* Row hover effect */
+tr:hover td {
+  background-color: rgba(255, 43, 43, 0.08);
+  box-shadow: inset 0 0 10px rgba(255, 43, 43, 0.2);
+}
+
+/* Zebra striping */
+tbody tr:nth-child(even) td {
+  background-color: #15151f;
+}
+
+/* Links (website/email) */
+a {
+  color: #ff4d4d;
+  text-decoration: none;
+  text-shadow: 0 0 4px rgba(255, 77, 77, 0.6);
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow:
+    0 0 6px #ff2b2b,
+    0 0 12px #ff2b2b;
+}
+
+/* Smooth transitions */
+table, th, td, tr, a {
+  transition: all 0.2s ease-in-out;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 120px;
+  margin-top: 6px;
+  background: linear-gradient(90deg, #ff2b2b, transparent);
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 6px #ff2b2b; }
+  50% { text-shadow: 0 0 12px #ff2b2b; }
+}
+
+h2 {
+  animation: glowPulse 3s infinite;
+}

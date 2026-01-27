@@ -1,0 +1,71 @@
+<h2>List from Main</h2>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Website</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  @for (user of httpusers; track user.id) {
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <a href="https://{{ user.website }}" target="_blank">
+          {{ user.website }}
+        </a>
+      </td>
+    </tr>
+  }
+</tbody>
+
+</table>
+
+<h2>Recipe List</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Cuisine</th>
+      <th>Difficulty</th>
+      <th>Prep Time</th>
+      <th>Cook Time</th>
+      <th>Servings</th>
+      <th>Rating</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let recipe of recipes | slice: 0: 5">
+      <td>{{ recipe.id }}</td>
+      <td>{{ recipe.name }}</td>
+      <td>{{ recipe.cuisine }}</td>
+      <td>{{ recipe.difficulty }}</td>
+      <td>{{ recipe.prepTimeMinutes }} min</td>
+      <td>{{ recipe.cookTimeMinutes }} min</td>
+      <td>{{ recipe.servings }}</td>
+      <td>{{ recipe.rating }}</td>
+      <td>
+        <img
+          [src]="recipe.image"
+          alt="{{ recipe.name }}"
+          style="width: 60px; height: 60px; border-radius: 4px;"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<router-outlet />
