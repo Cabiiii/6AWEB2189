@@ -1,0 +1,10 @@
+<h1>Welcome to the Community Help Desk Portal</h1>
+
+<h2>Latest Updates</h2>
+
+<ul>
+  <li *ngFor="let post of latestPosts$ | async">
+    <strong>{{ post.title | uppercase }}</strong><br>
+    {{ post.body | slice:0:80 }}...
+  </li>
+</ul>

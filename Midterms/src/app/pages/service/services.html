@@ -1,0 +1,14 @@
+<h1>Service Listings</h1>
+
+<input
+  type="text"
+  placeholder="Search services..."
+  (input)="search$.next($any($event.target).value)"
+/>
+
+<ul>
+  <li *ngFor="let post of posts$ | async">
+    <h3>{{ post.title | uppercase }}</h3>
+    <p>{{ post.body | truncate:120 }}</p>
+  </li>
+</ul>

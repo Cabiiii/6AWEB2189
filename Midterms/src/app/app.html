@@ -1,2 +1,10 @@
-<app-pipes-demo></app-pipes-demo>
-<router-outlet />
+<nav class="navbar">
+  <a routerLink="/home" routerLinkActive="active">Home</a>
+  <a routerLink="/about" routerLinkActive="active">About</a>
+  <a routerLink="/services" routerLinkActive="active">Services</a>
+  <a routerLink="/contact" routerLinkActive="active">Contact</a>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

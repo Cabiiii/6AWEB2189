@@ -1,0 +1,23 @@
+<h1>Contact Us</h1>
+
+<form>
+  <label>
+    Name:
+    <input [(ngModel)]="name" name="name" />
+  </label>
+
+  <br><br>
+
+  <label>
+    Message:
+    <textarea [(ngModel)]="message" name="message"></textarea>
+  </label>
+
+  <br><br>
+
+  <button type="button">Submit</button>
+</form>
+
+<h3>Form Preview</h3>
+<p><strong>Name:</strong> {{ name | uppercase }}</p>
+<p><strong>Message:</strong> {{ message }}</p>
