@@ -1,0 +1,44 @@
+<div class="card">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <input class="input" placeholder="Username" formControlName="username" />
+    <small class="error" *ngIf="isInvalid('username')">Username: 4-12 chars (letters/numbers/_)</small>
+
+    <input class="input" type="email" placeholder="Email" formControlName="email" />
+    <small class="error" *ngIf="isInvalid('email')">Enter a valid email</small>
+
+    <input class="input" type="password" placeholder="Password" formControlName="password" />
+    <small class="error" *ngIf="isInvalid('password')">Password: 8+ with upper, lower, number</small>
+
+    <select class="input" formControlName="role">
+      <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+    </select>
+
+    <div class="input-group">
+      <label>Gender:</label>
+      <label><input type="radio" formControlName="gender" value="male"> Male</label>
+      <label><input type="radio" formControlName="gender" value="female"> Female</label>
+      <label><input type="radio" formControlName="gender" value="other"> Other</label>
+    </div>
+    <div *ngIf="isInvalid('gender')">
+      <small class="error">Select gender</small>
+    </div>
+
+    <div class="input-group">
+      <label>Status:</label>
+      <select class="input" formControlName="status">
+        <option value="">Select Status</option>
+        <option value="permanent">Permanent</option>
+        <option value="probationary">Probationary</option>
+      </select>
+      <small class="error" *ngIf="isInvalid('status')">Select status</small>
+    </div>
+
+    <div class="input-group">
+      <label>Comments:</label>
+      <textarea class="input" formControlName="comments" placeholder="Enter notes or comments"></textarea>
+    </div>
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>
