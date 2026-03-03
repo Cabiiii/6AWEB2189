@@ -1,0 +1,68 @@
+<div class="card">
+  @if (!submitted) {
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      
+      <input class="input" placeholder="USERNAME" formControlName="username" />
+      @if (isInvalid('username')) {
+        <small class="error">Username: 4-12 chars (letters/numbers/_)</small>
+      }
+
+      <input class="input" type="email" placeholder="EMAIL" formControlName="email" />
+      @if (isInvalid('email')) {
+        <small class="error">Enter a valid email</small>
+      }
+
+      <input class="input" type="password" placeholder="PASSWORD" formControlName="password" />
+      @if (isInvalid('password')) {
+        <small class="error">Password: 8+ with upper, lower, number</small>
+      }
+
+      <div class="field-container">
+        <label class="section-label">GENDER IDENTIFICATION</label>
+        <div class="radio-options">
+          <label class="radio-label">
+            <input type="radio" value="Male" formControlName="gender"> MALE
+          </label>
+          <label class="radio-label">
+            <input type="radio" value="Female" formControlName="gender"> FEMALE
+          </label>
+          <label class="radio-label">
+            <input type="radio" value="Other" formControlName="gender"> OTHER
+          </label>
+        </div>
+      </div>
+
+      <div class="field-container">
+        <label class="section-label">EMPLOYMENT STATUS</label>
+        <label class="toggle-container">
+          <input type="checkbox" formControlName="status">
+          <span class="toggle-text">
+            {{ form.get('status')?.value ? 'PERMANENT' : 'PROBATIONARY' }}
+          </span>
+        </label>
+      </div>
+
+      <label class="section-label">DESIGNATION</label>
+      <select class="input" formControlName="role">
+        @for (r of roles; track r) {
+          <option [value]="r">{{ r }}</option>
+        }
+      </select>
+
+      <textarea class="input" placeholder="ADDITIONAL NOTES / COMMENTS" formControlName="comments" rows="3"></textarea>
+      @if (isInvalid('comments')) {
+        <small class="error">Maximum 200 characters allowed</small>
+      }
+
+      <button class="btn" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </form>
+  } @else {
+    <div class="success-message">
+      <h2>ACCESS GRANTED</h2>
+      <p>Your credentials have been encrypted and stored in the archives.</p>
+      <button class="btn" (click)="submitted = false; form.reset({role: 'Admin', gender: 'Male', status: false})">
+        RETURN
+      </button>
+    </div>
+  }
+</div>
