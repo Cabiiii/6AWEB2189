@@ -1,0 +1,82 @@
+<div class="form-container">
+  <mat-card>
+    <h2>Angular Material / Reactive Form</h2>
+
+    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Enter Text" formControlName="userName">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Enter Email" formControlName="email">
+        @if (formdata.controls['email'].invalid && formdata.controls['email'].touched) {
+          <mat-error>Email is required and must be a valid email.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Enter password" formControlName="password">
+        @if (formdata.controls['password'].invalid && formdata.controls['password'].touched) {
+          <mat-error>Password is required (min 8 characters).</mat-error>
+        }
+      </mat-form-field>
+
+      <div class="toggle-group-wrapper">
+        <label class="section-label">Identity</label>
+        <mat-button-toggle-group formControlName="gender" name="genderSelection">
+          <mat-button-toggle value="male">MALE</mat-button-toggle>
+          <mat-button-toggle value="female">FEMALE</mat-button-toggle>
+          <mat-button-toggle value="other">OTHER</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Enter Address" formControlName="address">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Birth Date</mat-label>
+        <input matInput [matDatepicker]="picker" placeholder="Select a date" formControlName="birthDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <div class="slider-group">
+        <label class="slider-label">
+          Angular Skill Level: {{ formdata.get('angularSkillLevel')?.value }}
+        </label>
+        <mat-slider [min]="0" [max]="10" [step]="1" [discrete]="true">
+          <input matSliderThumb formControlName="angularSkillLevel">
+        </mat-slider>
+      </div>
+
+      <button mat-raised-button 
+              type="submit" 
+              [disabled]="!formdata.valid"
+              matBadge="!" 
+              matBadgeColor="warn"
+              [matBadgeHidden]="formdata.valid">
+        Submit Form
+      </button>
+
+      @if (submitted) {
+  <p class="result-readout">
+    > DATA UPLOADED... <br>
+    > USER: {{ formdata.get('userName')?.value }} <br>
+    > EMAIL: {{ formdata.get('email')?.value }} <br>
+    > PASSWORD: {{ formdata.get('password')?.value }} <br>
+    > GENDER: {{ formdata.get('gender')?.value }} <br>
+    > ADDRESS: {{ formdata.get('address')?.value }} <br>
+    > BIRTH DATE: {{ formdata.get('birthDate')?.value | date:'shortDate' }} <br>
+    > SKILL LEVEL: {{ formdata.get('angularSkillLevel')?.value }} <br>
+    > STATUS: ACTIVE
+  </p>
+}
+    </form>
+  </mat-card>
+</div>
