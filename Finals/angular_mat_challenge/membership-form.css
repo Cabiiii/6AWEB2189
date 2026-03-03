@@ -1,0 +1,174 @@
+/* 1. ROOT VARIABLES & THEME LOGIC */
+:host {
+  --bg-void: #020202;
+  --bg-card: #080808;
+  --bg-input: #000000;
+  --accent-main: #ff3e3e;
+  --accent-dim: #700000;
+  --text-main: #ffffff;
+  --text-muted: #888888;
+  --border-color: #1a1a1a;
+  
+  display: block;
+  background-color: var(--bg-void);
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.4s ease-in-out;
+}
+
+.light-mode {
+  --bg-void: #f0f2f5;
+  --bg-card: #ffffff;
+  --bg-input: #f5f5f5;
+  --text-main: #1c1e21;
+  --text-muted: #65676b;
+  --border-color: #dddfe2;
+}
+
+/* 2. CARD CONTAINER */
+mat-card {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 40px;
+  position: relative;
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* 3. TOP-RIGHT TOGGLE */
+.top-right-toggle {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 10;
+}
+
+.toggle-hint {
+  font-size: 10px;
+  font-weight: 900;
+  color: var(--text-muted);
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+
+/* 4. HEADINGS */
+h2 {
+  color: var(--accent-main);
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 15px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* 5. FORM FIELDS */
+::ng-deep .mat-mdc-form-field {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: var(--bg-input) !important;
+}
+
+::ng-deep .mat-mdc-input-element {
+  color: red !important;
+}
+
+/* 6. GENDER BUTTONS */
+.toggle-group-wrapper {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.section-label {
+  display: block;
+  color: var(--accent-main);
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+mat-button-toggle-group {
+  display: flex !important;
+  width: 100% !important;
+  border: 1px solid var(--border-color) !important;
+  background-color: var(--bg-input) !important;
+}
+
+mat-button-toggle {
+  flex: 1;
+  color: red !important;
+}
+
+/* 7. FITNESS SLIDER */
+.slider-group {
+  margin: 30px 0;
+  width: 100%;
+}
+
+.slider-label {
+  display: block;
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+mat-slider {
+  width: 100% !important;
+  display: block !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 8px 0 !important;
+}
+
+
+
+::ng-deep .mat-mdc-slider {
+  width: 100% !important;
+  --mdc-slider-handle-color: var(--accent-main) !important;
+  --mdc-slider-active-track-color: var(--accent-main) !important;
+  --mdc-slider-inactive-track-color: var(--border-color) !important;
+}
+
+/* 8. SUBMIT BUTTON & BADGE */
+button[mat-raised-button] {
+  width: 100%;
+  padding: 25px 0 !important;
+  background-color: var(--accent-main) !important;
+  color: white !important;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+::ng-deep .mat-badge-content {
+  background-color: gold !important; 
+  color: black !important;
+}
+
+/* 9. RESULT SUMMARY */
+.result-readout {
+  margin-top: 25px;
+  padding: 15px;
+  background: rgba(255, 62, 62, 0.05);
+  border-left: 4px solid var(--accent-main);
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--text-main);
+  line-height: 1.6;
+}
